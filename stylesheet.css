@@ -63,9 +63,10 @@
   --shadow-2: 0 2px 6px rgba(27, 26, 24, 0.07),
     0 12px 28px rgba(27, 26, 24, 0.08);
 
-  /* Logos are pre-rendered as black-on-transparent marks. */
-  --logo-filter: opacity(0.62);
-  --logo-filter-hover: opacity(0.95);
+  /* Logos keep their brand colours and sit on a light plate in both
+     themes, because the source marks range from white-on-blue to
+     navy-on-white and none of them survive a dark ground. */
+  --logo-plate: #ffffff;
 
   color-scheme: light;
 }
@@ -93,8 +94,7 @@
     --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 8px rgba(0, 0, 0, 0.22);
     --shadow-2: 0 2px 6px rgba(0, 0, 0, 0.35), 0 12px 28px rgba(0, 0, 0, 0.4);
 
-    --logo-filter: invert(1) opacity(0.62);
-    --logo-filter-hover: invert(1) opacity(0.95);
+    --logo-plate: #ffffff;
 
     color-scheme: dark;
   }
@@ -122,8 +122,7 @@
   --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 8px rgba(0, 0, 0, 0.22);
   --shadow-2: 0 2px 6px rgba(0, 0, 0, 0.35), 0 12px 28px rgba(0, 0, 0, 0.4);
 
-  --logo-filter: invert(1) opacity(0.62);
-  --logo-filter-hover: invert(1) opacity(0.95);
+  --logo-plate: #ffffff;
 
   color-scheme: dark;
 }
@@ -601,8 +600,11 @@ em {
 
 .affiliation__logo {
   display: block;
-  height: 52px;
   width: 100%;
+  height: 66px;
+  padding: 9px 16px;
+  background: var(--logo-plate);
+  border-radius: var(--radius-sm);
   overflow: hidden;
 }
 
@@ -611,12 +613,6 @@ em {
   height: 100%;
   object-fit: contain;
   object-position: center;
-  filter: var(--logo-filter);
-  transition: filter 0.3s ease;
-}
-
-.affiliation:hover .affiliation__logo img {
-  filter: var(--logo-filter-hover);
 }
 
 .affiliation__role {
@@ -916,8 +912,9 @@ a.pub__title:hover {
   }
 
   .affiliation__logo {
-    width: 76px;
-    height: 48px;
+    width: 96px;
+    height: 50px;
+    padding: 6px 9px;
     flex: none;
   }
 }
