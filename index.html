@@ -1,405 +1,566 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-    <title>Xiu Yuan | Researcher in AI and Robotics at Washington University in St. Louis</title>
-
-	<meta name="description" content="Xiu Yuan's personal website with research in Robotics, RL, and Generative Models.">
-
-    <meta name="author" content="Xiu Yuan">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="images/favicon/robotics-icon-style.jpg" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    
+
+    <title>Xiu Yuan — AI &amp; Robotics Researcher, Washington University in St. Louis</title>
+    <meta name="description" content="Xiu Yuan is a Computer Science PhD student at Washington University in St. Louis working on embodied intelligence with foundation models: VLAs, world-action models, embodied reasoning, and agentic robotic systems.">
+    <meta name="author" content="Xiu Yuan">
+    <link rel="canonical" href="https://xiuyuan0216.github.io/">
+
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Xiu Yuan — AI &amp; Robotics Researcher">
+    <meta property="og:description" content="PhD student at Washington University in St. Louis working on embodied intelligence with foundation models.">
+    <meta property="og:url" content="https://xiuyuan0216.github.io/">
+    <meta property="og:image" content="https://xiuyuan0216.github.io/images/media/portrait.jpg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="@XiuYuan0216">
+
+    <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="images/favicon/favicon.ico" sizes="any">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;650&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+    <link rel="stylesheet" href="stylesheet.css">
+
+    <script>
+      // Apply the saved theme before first paint to avoid a flash.
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          if (saved === "light" || saved === "dark") {
+            document.documentElement.setAttribute("data-theme", saved);
+          }
+        } catch (e) {}
+      })();
+    </script>
   </head>
 
   <body>
-    <table style="width:100%;max-width:850px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr style="padding:0px">
-        <td style="padding:0px">
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr style="padding:0px">
-              <td style="padding:2.5%;width:63%;vertical-align:middle">
-                <p class="name" style="text-align: center;">
-                  Xiu Yuan
-                </p>
-                <p>
-		I'm a first-year Computer Science PhD student at <a href="https://washu.edu/">Washington University in St. Louis</a> advised by Prof. Chongjie Zhang.
-		I did my undergraduate study at <a href="https://ucsd.edu/">UC San Diego</a>, where I was advised by Prof. Hao Su.
-		I did my high school study at <a href="http://www.nfls.com.cn/">Nanjing Foreign Language School</a>.
-                </p>
-				<p>
-					I interned at Waymo as a Research Intern in Summer 2026 on the Pre-training team within AI Foundations, mentored by Kratarth Goel (Senior Staff Research Scientist, Tech Lead) and Jonah Philion (Senior Research Scientist). My work focused on improving the reasoning capabilities of driving foundation models.
-				</p>
-                <p style="text-align:center">
-                  <a href="mailto:xiu@wustl.edu">Email</a> &nbsp;/&nbsp;
-                  <a href="https://scholar.google.com/citations?user=wbq8hCUAAAAJ&hl=en">Scholar</a> &nbsp;/&nbsp;
-                  <a href="https://x.com/XiuYuan0216">Twitter</a> &nbsp;/&nbsp;
-                  <a href="https://github.com/xiuyuan0216">Github</a>
-                </p>
-              </td>
-              <td style="padding:2.5%;width:25%;max-width:25%">
-                <a href="images/xiu_yuan.jpeg"><img style="width:70%;max-width:70%;object-fit: cover; border-radius: 10%;" alt="profile photo" src="images/xiu_yuan.jpeg" class="hoverZoomLink"></a>
-              </td>
-            </tr>
-          </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-              <tr>
-              <td style="padding:16px;width:100%;vertical-align:middle">
-                <h2>Research</h2>
-                <p>
-                  My research focuses on advancing embodied intelligence with foundation models. I organize my work around three core pillars: (1) efficient online adaptation and continual improvement of low-level embodied control models, including vision-language-action models (VLAs) and world-action models (WAMs); (2) stronger reasoning capabilities for high-level embodied models, particularly vision-language models (VLMs); and (3) agentic robotic systems that can autonomously plan, adapt, coordinate, and interact with the physical world.
- <span style="color: red;">I am always happy to collaborate on interesting projects. If you want to chat, feel free to shoot me an email.
+    <a class="skip-link" href="#main">Skip to content</a>
 
-                </p>
-              </td>
-            </tr>
-          </tbody></table>
+    <header class="topbar" id="topbar">
+      <div class="topbar__inner">
+        <a class="topbar__brand" href="#top">Xiu Yuan</a>
+        <nav class="topbar__nav" aria-label="Sections">
+          <a href="#research">Research</a>
+          <a href="#experience" data-optional>Experience</a>
+          <a href="#publications">Publications</a>
+          <button class="theme-toggle" type="button" id="theme-toggle"
+                  aria-label="Switch between light and dark theme">
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+            </svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4.2"></circle>
+              <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+            </svg>
+          </button>
+        </nav>
+      </div>
+    </header>
 
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-              <tr>
-              <td style="padding:16px;width:100%;vertical-align:middle">
-                <h2>Industry Experience</h2>
-                <table style="width:100%; border-collapse:collapse; table-layout:fixed; margin-top:10px;">
-                  <tr>
-                    <td style="text-align:center; vertical-align:middle; padding:10px 12px;">
-                    <img src="images/waymo.jpeg" alt="Waymo logo" style="height:120px; width:auto; max-width:100%; object-fit:contain; display:inline-block;"> 
-                    <p>Research Scientist Intern <br> (2026 Summer)</p></td>
+    <main class="page" id="main">
+      <span id="top"></span>
 
-                    <td style="text-align:center; vertical-align:middle; padding:10px 12px;"><img src="images/werfen.jpeg" alt="Werfen logo"style="height:120px; width:auto; max-width:100%; object-fit:contain; display:inline-block;"> 
-                    <p>Machine Learning Intern <br> (2022 Summer) </p></td>
+      <!-- ================= Hero ================= -->
+      <section class="hero">
+        <div class="hero__intro">
+          <h1 class="hero__name">Xiu Yuan</h1>
+          <p class="hero__tagline">Embodied intelligence with foundation models</p>
 
-                    <td style="text-align:center; vertical-align:middle; padding:10px 12px;"><img src="images/basf.jpeg" alt="BASF logo"style="height:120px; width:auto; max-width:100%; object-fit:contain; display:inline-block;">
-                    <p>Data Analyst Intern <br> (2021 Summer) </p></td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-          </tbody></table>
+          <div class="hero__bio">
+            <p>
+              I'm a first-year Computer Science PhD student at
+              <a href="https://washu.edu/">Washington University in St. Louis</a>,
+              advised by Prof. Chongjie Zhang. I did my undergraduate study at
+              <a href="https://ucsd.edu/">UC San Diego</a>, where I was advised by
+              Prof. Hao Su, and my high school study at
+              <a href="http://www.nfls.com.cn/">Nanjing Foreign Language School</a>.
+            </p>
+            <p>
+              In Summer 2026 I interned at Waymo as a Research Intern on the
+              Pre-training team within AI Foundations, mentored by Kratarth Goel
+              (Senior Staff Research Scientist, Tech Lead) and Jonah Philion
+              (Senior Research Scientist). My work focused on improving the
+              reasoning capabilities of driving foundation models.
+            </p>
+          </div>
 
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-              <tr>
-              <td style="padding:16px;width:100%;vertical-align:middle">
-                <h2>Education Experience</h2>
-                <table style="width:100%; border-collapse:collapse; table-layout:fixed; margin-top:10px;">
-                  <tr>
-                    <td style="text-align:center; vertical-align:middle; padding:10px 12px;">
-                    <img src="images/washu.jpeg" alt="washu logo" style="height:120px; width:auto; max-width:100%; object-fit:contain; display:inline-block;"> 
-                    <p>PhD Student (Ongoing) <br> (2025 - 2030)</p></td>
-
-                    <td style="text-align:center; vertical-align:middle; padding:10px 12px;"><img src="images/ucsd.jpeg" alt="ucsd logo"style="height:120px; width:auto; max-width:100%; object-fit:contain; display:inline-block;"> 
-                    <p>Undergraduate Student <br> (2021 - 2025) </p></td>
-
-                    <td style="text-align:center; vertical-align:middle; padding:10px 12px;"><img src="images/nfls.jpeg" alt="nfls logo"style="height:120px; width:auto; max-width:100%; object-fit:contain; display:inline-block;">
-                    <p>High School Student <br> (2018 - 2021) </p></td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-          </tbody></table>
-
-
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-              <tr>
-              <td style="padding:16px;width:100%;vertical-align:middle">
-                <h2>Publications/Preprints</h2>
-                <p>
-                  Papers sorted by recency, <span style="color: red;">Representative papers are highlighted</span>.
-                </p>
-              </td>
-            </tr>
-            
-          </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-
-	<tr bgcolor="#ffffd0">
-      <td style="padding:16px;width:30%;vertical-align:middle">
-        <div style="display:flex; justify-content:center; align-items:center; height:100%;">
-          <img src="images/MEMORA_TASK_B.gif" width="200" style="display:block; max-width:100%; height:auto; border-radius:8px;">
+          <ul class="links">
+            <li>
+              <a href="mailto:xiu@wustl.edu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2.5" y="4.5" width="19" height="15" rx="2.5"></rect>
+                  <path d="m3 7 9 6 9-6"></path>
+                </svg>Email
+              </a>
+            </li>
+            <li>
+              <a href="https://scholar.google.com/citations?user=wbq8hCUAAAAJ&amp;hl=en">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 3 1.5 8.5 12 14l10.5-5.5z"></path>
+                  <path d="M6 11v5.2c0 1.6 2.7 2.9 6 2.9s6-1.3 6-2.9V11"></path>
+                </svg>Scholar
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/xiuyuan0216">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 1.8a10.2 10.2 0 0 0-3.2 19.9c.5.1.7-.2.7-.5v-1.9c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.6 1 1.6 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.3-.3-4.7-1.1-4.7-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7 1 .7 2v2.9c0 .3.2.6.7.5A10.2 10.2 0 0 0 12 1.8z"></path>
+                </svg>GitHub
+              </a>
+            </li>
+            <li>
+              <a href="https://x.com/XiuYuan0216">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M17.5 3h3.1l-6.8 7.8L21.8 21h-6.3l-4.9-6.4L4.9 21H1.8l7.3-8.3L1.5 3h6.4l4.4 5.9zm-1.1 16.1h1.7L7.7 4.8H5.9z"></path>
+                </svg>Twitter
+              </a>
+            </li>
+          </ul>
         </div>
-      </td>
-      <td style="padding:8px;width:80%;vertical-align:middle">
-        <a href="index.html">
-          <span class="papertitle">MEMORA: Embodied Action Memory from Egocentric Videos for
-Reasoning and Planning</span>
-        </a>
-        <br>
-        <a href="index.html">Zihao Yu</a>,
-        <strong>Xiu Yuan</strong>,
-        <a href="https://mig-ai.github.io/person-zhangchongjie.html">Chongjie Zhang</a>
-        <br>
-        <em>EMNLP 2026</em>
-        <br>
-		<em>Foundation Model for Robot Planning Workshop at RSS 2026 (Oral Presentation)</em>
-		<br>
-        <a href="index.html">Project Page</a>
-        /
-        <a href="index.html">ArXiv</a>
-        /
-        <a href="index.html">Code</a>
-		<br>
-		<em> Zihao Yu is a master student I proudly mentored</em>
-		<br>
-		<p> Long-horizon robot planning needs persistent embodied memory beyond next-action prediction. MEMORA realizes Embodied Action Memory through a formation-consolidation-retrieval lifecycle with four typed stores: Environment, Entity, Activity, and Inferred Knowledge. Online editing tracks object identities and state histories, while offline consolidation turns repeated experience into reusable procedures and participant-specific regularities.
 
-</p>
-      </td>
-    </tr>
+        <figure class="hero__portrait">
+          <a href="images/xiu_yuan.jpeg">
+            <img src="images/media/portrait.jpg" width="560" height="560"
+                 alt="Portrait of Xiu Yuan">
+          </a>
+        </figure>
+      </section>
 
-	<tr>
-      <td style="padding:16px;width:30%;vertical-align:middle">
-        <div style="display:flex; justify-content:center; align-items:center; height:100%;">
-          <img src="images/smax.gif" width="200" style="display:block; max-width:100%; height:auto; border-radius:8px;">
+      <!-- ================= Research ================= -->
+      <section class="section" id="research">
+        <h2 class="section-heading">Research</h2>
+        <div class="prose">
+          <p>
+            My research focuses on advancing embodied intelligence with foundation
+            models. I organize my work around three core pillars:
+          </p>
+          <ol class="pillars">
+            <li>
+              Efficient online adaptation and continual improvement of low-level
+              embodied control models, including vision-language-action models
+              (VLAs) and world-action models (WAMs).
+            </li>
+            <li>
+              Stronger reasoning capabilities for high-level embodied models,
+              particularly vision-language models (VLMs).
+            </li>
+            <li>
+              Agentic robotic systems that can autonomously plan, adapt,
+              coordinate, and interact with the physical world.
+            </li>
+          </ol>
+          <div class="callout">
+            <svg class="callout__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-3.9-.9L3 20.5l1.6-4.8A8.3 8.3 0 0 1 3.6 11 8.4 8.4 0 0 1 12 3h.5a8.4 8.4 0 0 1 8.5 8z"></path>
+            </svg>
+            <p>
+              I'm always happy to collaborate on interesting projects. If you'd
+              like to chat, feel free to
+              <a href="mailto:xiu@wustl.edu">shoot me an email</a>.
+            </p>
+          </div>
         </div>
-      </td>
-      <td style="padding:8px;width:80%;vertical-align:middle">
-        <a href="index.html">
-          <span class="papertitle">MATCHA: Bridging the Gap between Sample and Wall-Clock Efficiency in
-Model-Based Multi-Agent Reinforcement Learning</span>
-        </a>
-        <br>
-        <a href="https://heavycrab.github.io/">Jianing Ye</a>,
-		<a href="https://breez3young.github.io/">Yang Zhang</a>,
-        <strong>Xiu Yuan</strong>,
-        <a href="index.html">David Park</a>,
-        <a href="https://github.com/liuqh16">Qihan Liu</a>,
-		  <a href=https://mig-ai.github.io/person-zhangchongjie.html">Chongjie Zhang</a>,
-		  
-        <br>
-        <em>Submitted to NeurIPS 2026</em>
-        <br>
-        <a href="index.html">Project Page</a>
-        /
-        <a href="index.html">ArXiv</a>
-        /
-        <a href="index.html">Code</a>
-      </td>
-    </tr>
+      </section>
 
-            <tr bgcolor="#ffffd0">
-      <td style="padding:16px;width:30%;vertical-align:middle">
-        <div style="display:flex; justify-content:center; align-items:center; height:100%;">
-          <img src="images/USR.gif" width="200" style="display:block; max-width:100%; height:auto; border-radius:8px;">
+      <!-- ================= Experience ================= -->
+      <section class="section" id="experience">
+        <h2 class="section-heading">Industry Experience</h2>
+        <ul class="affiliations">
+          <li class="affiliation">
+            <span class="affiliation__logo">
+              <img src="images/media/logo-waymo.png" alt="Waymo logo" loading="lazy">
+            </span>
+            <p class="affiliation__role">Research Scientist Intern</p>
+            <p class="affiliation__meta">Waymo &middot; Summer 2026</p>
+          </li>
+          <li class="affiliation">
+            <span class="affiliation__logo">
+              <img src="images/media/logo-werfen.png" alt="Werfen logo" loading="lazy">
+            </span>
+            <p class="affiliation__role">Machine Learning Intern</p>
+            <p class="affiliation__meta">Werfen &middot; Summer 2022</p>
+          </li>
+          <li class="affiliation">
+            <span class="affiliation__logo">
+              <img src="images/media/logo-basf.png" alt="BASF logo" loading="lazy">
+            </span>
+            <p class="affiliation__role">Data Analyst Intern</p>
+            <p class="affiliation__meta">BASF &middot; Summer 2021</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section" id="education">
+        <h2 class="section-heading">Education</h2>
+        <ul class="affiliations">
+          <li class="affiliation">
+            <span class="affiliation__logo">
+              <img src="images/media/logo-washu.png" alt="Washington University in St. Louis logo" loading="lazy">
+            </span>
+            <p class="affiliation__role">PhD in Computer Science</p>
+            <p class="affiliation__meta">WashU &middot; 2025 &ndash; present</p>
+          </li>
+          <li class="affiliation">
+            <span class="affiliation__logo">
+              <img src="images/media/logo-ucsd.png" alt="UC San Diego logo" loading="lazy">
+            </span>
+            <p class="affiliation__role">B.S., Undergraduate Study</p>
+            <p class="affiliation__meta">UC San Diego &middot; 2021 &ndash; 2025</p>
+          </li>
+          <li class="affiliation">
+            <span class="affiliation__logo">
+              <img src="images/media/logo-nfls.png" alt="Nanjing Foreign Language School logo" loading="lazy">
+            </span>
+            <p class="affiliation__role">High School</p>
+            <p class="affiliation__meta">NFLS &middot; 2018 &ndash; 2021</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ================= Publications ================= -->
+      <section class="section" id="publications">
+        <h2 class="section-heading">Publications &amp; Preprints</h2>
+        <p class="pub-note">
+          Sorted by recency. <span class="swatch" aria-hidden="true"></span>
+          Highlighted entries are representative papers.
+        </p>
+
+        <div class="pubs">
+
+          <!-- MEMORA -->
+          <article class="pub pub--featured">
+            <figure class="pub__media">
+              <video poster="images/media/memora.jpg"
+                     autoplay loop muted playsinline
+                     aria-label="MEMORA task demonstration">
+                <source src="images/media/memora.webm" type="video/webm">
+                <source src="images/media/memora.mp4" type="video/mp4">
+              </video>
+            </figure>
+            <div class="pub__body">
+              <span class="pub__title">MEMORA: Embodied Action Memory from Egocentric Videos for Reasoning and Planning</span>
+              <p class="pub__authors">
+                Zihao Yu, <strong>Xiu Yuan</strong>,
+                <a href="https://mig-ai.github.io/person-zhangchongjie.html">Chongjie Zhang</a>
+              </p>
+              <ul class="pub__venues">
+                <li class="is-primary">EMNLP 2026</li>
+                <li>Foundation Model for Robot Planning Workshop @ RSS 2026 (Oral)</li>
+              </ul>
+              <p class="pub__abstract">
+                Long-horizon robot planning needs persistent embodied memory beyond
+                next-action prediction. MEMORA realizes Embodied Action Memory
+                through a formation&ndash;consolidation&ndash;retrieval lifecycle with four
+                typed stores: Environment, Entity, Activity, and Inferred Knowledge.
+                Online editing tracks object identities and state histories, while
+                offline consolidation turns repeated experience into reusable
+                procedures and participant-specific regularities.
+              </p>
+              <p class="pub__aside">Zihao Yu is a master's student I proudly mentored.</p>
+            </div>
+          </article>
+
+          <!-- MATCHA -->
+          <article class="pub">
+            <figure class="pub__media">
+              <video poster="images/media/matcha.jpg"
+                     autoplay loop muted playsinline
+                     aria-label="MATCHA multi-agent environment">
+                <source src="images/media/matcha.webm" type="video/webm">
+                <source src="images/media/matcha.mp4" type="video/mp4">
+              </video>
+            </figure>
+            <div class="pub__body">
+              <span class="pub__title">MATCHA: Bridging the Gap between Sample and Wall-Clock Efficiency in Model-Based Multi-Agent Reinforcement Learning</span>
+              <p class="pub__authors">
+                <a href="https://heavycrab.github.io/">Jianing Ye</a>,
+                <a href="https://breez3young.github.io/">Yang Zhang</a>,
+                <strong>Xiu Yuan</strong>, David Park,
+                <a href="https://github.com/liuqh16">Qihan Liu</a>,
+                <a href="https://mig-ai.github.io/person-zhangchongjie.html">Chongjie Zhang</a>
+              </p>
+              <ul class="pub__venues">
+                <li class="is-primary">Submitted to NeurIPS 2026</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- USR -->
+          <article class="pub pub--featured">
+            <figure class="pub__media">
+              <video poster="images/media/usr.jpg"
+                     autoplay loop muted playsinline
+                     aria-label="USR robot manipulation rollout">
+                <source src="images/media/usr.webm" type="video/webm">
+                <source src="images/media/usr.mp4" type="video/mp4">
+              </video>
+            </figure>
+            <div class="pub__body">
+              <span class="pub__title">Unified Latent Steering and Residual Refinement for Online Improvement of Diffusion Policy Models</span>
+              <p class="pub__authors">
+                <a href="https://zbzhu99.github.io/">Zhengbang Zhu</a>*,
+                Ziyan Li*, <strong>Xiu Yuan</strong>*,
+                <a href="https://zhanghanbo.github.io/">Hanbo Zhang</a>,
+                <a href="https://scholar.google.com/citations?user=i8wNtSgAAAAJ&amp;hl=en">Yuxiao Liu</a>,
+                <a href="https://mig-ai.github.io/person-zhangchongjie.html">Chongjie Zhang</a>,
+                <a href="https://apex.sjtu.edu.cn/members/yyu">Yong Yu</a>,
+                <a href="https://wnzhang.net/">Weinan Zhang</a>,
+                <a href="https://minghuanliu.com/">Minghuan Liu</a>
+                <span class="eq">(* equal contribution)</span>
+              </p>
+              <ul class="pub__venues">
+                <li class="is-primary">Submitted to CoRL 2026</li>
+                <li>Decision-Making from Offline Datasets to Online Adaptation Workshop @ ICML 2026</li>
+              </ul>
+              <p class="pub__abstract">
+                Imitation policies are brittle under distribution shift, and direct
+                finetuning is costly. USR enables finetuning-free online improvement
+                of diffusion policies through unified latent <em>S</em>teering and
+                residual <em>R</em>efinement: a lightweight actor steers diffusion
+                toward promising modes while adding corrections beyond the policy's
+                support. USR achieves state-of-the-art results on benchmarks,
+                MultiModalBench, and real-robot VLA adaptation.
+              </p>
+            </div>
+          </article>
+
+          <!-- RNR-DP -->
+          <article class="pub pub--featured">
+            <figure class="pub__media">
+              <video poster="images/media/rnrdp.jpg"
+                     autoplay loop muted playsinline
+                     aria-label="RNR-DP visuomotor control rollout">
+                <source src="images/media/rnrdp.webm" type="video/webm">
+                <source src="images/media/rnrdp.mp4" type="video/mp4">
+              </video>
+            </figure>
+            <div class="pub__body">
+              <a class="pub__title" href="https://rnr-dp.github.io/">Responsive Noise-Relaying Diffusion Policy: Responsive and Efficient Visuomotor Control</a>
+              <p class="pub__authors">
+                <a href="https://zhuoqun-chen.github.io/">Zhuoqun Chen</a>*,
+                <strong>Xiu Yuan</strong>*,
+                <a href="https://cseweb.ucsd.edu/~t3mu/">Tongzhou Mu</a>,
+                <a href="https://cseweb.ucsd.edu/~haosu/">Hao Su</a>
+                <span class="eq">(* equal contribution)</span>
+              </p>
+              <ul class="pub__venues">
+                <li class="is-primary">TMLR 2025</li>
+                <li>Generative Models for Robot Learning Workshop @ ICLR 2025</li>
+              </ul>
+              <p class="pub__actions">
+                <a href="https://rnr-dp.github.io/">Project Page</a>
+                <a href="https://arxiv.org/pdf/2502.12724">arXiv</a>
+                <a href="https://github.com/zhuoqun-chen/rnrdp">Code</a>
+              </p>
+              <p class="pub__abstract">
+                We propose RNR-DP, a diffusion-based approach for visuomotor control
+                that ensures responsive and efficient action generation. By leveraging
+                a noise-relaying action buffer and a sequential denoising mechanism,
+                RNR-DP demonstrates advantages on both response-sensitive and regular
+                tasks across the evaluated benchmarks.
+              </p>
+            </div>
+          </article>
+
+          <!-- Policy Decorator -->
+          <article class="pub pub--featured">
+            <figure class="pub__media">
+              <video poster="images/media/policy-decorator.jpg"
+                     autoplay loop muted playsinline
+                     aria-label="Policy Decorator rollout">
+                <source src="images/media/policy-decorator.webm" type="video/webm">
+                <source src="images/media/policy-decorator.mp4" type="video/mp4">
+              </video>
+            </figure>
+            <div class="pub__body">
+              <a class="pub__title" href="https://policydecorator.github.io/">Policy Decorator: Model-Agnostic Online Refinement for Large Policy Models</a>
+              <p class="pub__authors">
+                <strong>Xiu Yuan</strong>*,
+                <a href="https://cseweb.ucsd.edu/~t3mu/">Tongzhou Mu</a>*,
+                <a href="https://www.stoneztao.com/">Stone Tao</a>,
+                <a href="https://seerkfang.github.io/">Yunhao Fang</a>,
+                Mengke Zhang,
+                <a href="https://cseweb.ucsd.edu/~haosu/">Hao Su</a>
+                <span class="eq">(* equal contribution)</span>
+              </p>
+              <ul class="pub__venues">
+                <li class="is-primary">ICLR 2025</li>
+              </ul>
+              <p class="pub__actions">
+                <a href="https://policydecorator.github.io/">Project Page</a>
+                <a href="https://arxiv.org/abs/2412.13630">arXiv</a>
+                <a href="https://github.com/tongzhoumu/policy_decorator">Code</a>
+              </p>
+              <p class="pub__abstract">
+                Large policy models learned by offline imitation learning are often
+                limited by the quantity, quality, and diversity of demonstrations. We
+                introduce Policy Decorator, which uses a model-agnostic residual
+                policy to refine large policy models during online interactions. By
+                implementing controlled exploration strategies, Policy Decorator
+                enables stable, sample-efficient online learning.
+              </p>
+            </div>
+          </article>
+
+          <!-- State-to-Visual DAgger -->
+          <article class="pub">
+            <figure class="pub__media">
+              <img src="images/media/s2v.jpg" alt="State-to-Visual DAgger method diagram" loading="lazy">
+            </figure>
+            <div class="pub__body">
+              <a class="pub__title" href="https://arxiv.org/abs/2412.13662">When Should We Prefer State-to-Visual DAgger Over Visual Reinforcement Learning?</a>
+              <p class="pub__authors">
+                <a href="https://cseweb.ucsd.edu/~t3mu/">Tongzhou Mu</a>*,
+                <a href="https://openreview.net/profile?id=~Zhaoyang_Li9">Zhaoyang Li</a>*,
+                <a href="https://openreview.net/profile?id=~Stanis%C5%82aw_Wiktor_Strzelecki1">Stanislaw Strzelecki</a>*,
+                <strong>Xiu Yuan</strong>,
+                <a href="https://openreview.net/profile?id=~Yunchao_Yao1">Yunchao Yao</a>,
+                <a href="https://www.litianliang.org/">Litian Liang</a>,
+                <a href="https://cseweb.ucsd.edu/~haosu/">Hao Su</a>
+                <span class="eq">(* equal contribution)</span>
+              </p>
+              <ul class="pub__venues">
+                <li class="is-primary">AAAI 2025</li>
+              </ul>
+              <p class="pub__actions">
+                <a href="https://arxiv.org/abs/2412.13662">arXiv</a>
+                <a href="https://github.com/tongzhoumu/s2v-dagger">Code</a>
+              </p>
+              <p class="pub__abstract">
+                Visual reinforcement learning trains policies directly from visual
+                observations, but faces challenges in sample efficiency and compute
+                cost. This study empirically compares State-to-Visual DAgger &mdash; a
+                two-stage framework that first trains a state policy, then uses online
+                imitation to learn a visual policy &mdash; against Visual RL across a
+                diverse set of tasks.
+              </p>
+            </div>
+          </article>
+
+          <!-- Solar desalination -->
+          <article class="pub">
+            <figure class="pub__media">
+              <video poster="images/media/solar.jpg"
+                     autoplay loop muted playsinline
+                     aria-label="Solar desalination evaporation experiment">
+                <source src="images/media/solar.webm" type="video/webm">
+                <source src="images/media/solar.mp4" type="video/mp4">
+              </video>
+            </figure>
+            <div class="pub__body">
+              <a class="pub__title" href="https://pubs.acs.org/doi/abs/10.1021/acsami.2c09063">Enhanced Contactless Salt-Collecting Solar Desalination</a>
+              <p class="pub__authors">
+                Yue Bian, Zhihao Ye, Gengyou Zhao, Kun Tang, Yan Tang, Si Chen,
+                Lijuan Zhao, <strong>Xiu Yuan</strong>, Shunming Zhu, Jiandong Ye,
+                Hai Lu, Yi Yang, Lan Fu, Shulin Gu
+              </p>
+              <ul class="pub__venues">
+                <li class="is-primary">ACS Applied Materials &amp; Interfaces 2022</li>
+              </ul>
+              <p class="pub__actions">
+                <a href="https://pubs.acs.org/doi/abs/10.1021/acsami.2c09063">Paper</a>
+              </p>
+              <p class="pub__abstract">
+                A paper-based thermal radiation-enabled evaporation system (TREES)
+                achieves sustainable, highly efficient salt-collecting desalination,
+                featuring a dynamic evaporation front based on the accumulated salt
+                layer where water serves as its own absorber via energy
+                down-conversion. On 7&nbsp;wt&nbsp;% brine it continuously evaporates
+                water at 2.25&nbsp;L&nbsp;m<sup>&minus;2</sup>&nbsp;h<sup>&minus;1</sup>
+                under 1&nbsp;sun illumination &mdash; well beyond the input solar energy
+                limit &mdash; for over 366&nbsp;hours.
+              </p>
+            </div>
+          </article>
+
+          <!-- Carbonized magnolia -->
+          <article class="pub">
+            <figure class="pub__media">
+              <img src="images/media/carbonized.jpg" alt="Carbonized magnolia fruit evaporator" loading="lazy">
+            </figure>
+            <div class="pub__body">
+              <a class="pub__title" href="https://onlinelibrary.wiley.com/doi/full/10.1002/gch2.201900040">Carbonized Tree-Like Furry Magnolia Fruit-Based Evaporator Replicating the Feat of Plant Transpiration</a>
+              <p class="pub__authors">
+                Yue Bian, Yang Shen, Kun Tang, Qianqian Du, Licai Hao, Dongyang Liu,
+                Jinggang Hao, Dong Zhou, Xiaokun Wang, Huiling Zhang, Peiye Li,
+                Yimeng Sang, <strong>Xiu Yuan</strong>, Lijuan Zhao, Jiandong Ye,
+                Bin Liu, Hai Lu, Yi Yang, Rong Zhang, Youdou Zheng, Xiang Xiong,
+                Shulin Gu
+              </p>
+              <ul class="pub__venues">
+                <li class="is-primary">Global Challenges 2019</li>
+              </ul>
+              <p class="pub__actions">
+                <a href="https://onlinelibrary.wiley.com/doi/full/10.1002/gch2.201900040">Paper</a>
+              </p>
+              <p class="pub__abstract">
+                Magnolia fruits, as tree-like living organisms, can become outstanding
+                3D evaporators through a simple carbonization process. The mini tree
+                possesses omnidirectional high light absorptance with minimized heat
+                loss and gains energy from the environment. Water confined in the fruit
+                has reduced vaporization enthalpy and transports quickly following
+                Murray's law, achieving a record-high vapor generation rate of
+                1.22&nbsp;kg&nbsp;m<sup>&minus;2</sup>&nbsp;h<sup>&minus;1</sup> in the
+                dark and 3.15&nbsp;kg&nbsp;m<sup>&minus;2</sup>&nbsp;h<sup>&minus;1</sup>
+                under 1&nbsp;sun illumination.
+              </p>
+            </div>
+          </article>
+
         </div>
-      </td>
-      <td style="padding:8px;width:80%;vertical-align:middle">
-        <a href="index.html">
-          <span class="papertitle">Unified Latent Steering and Residual Refinement for Online Improvement of Diffusion Policy Models</span>
-        </a>
-        <br>
-        <a href="https://zbzhu99.github.io/">Zhengbang Zhu*</a>,
-        <a href="index.html">Ziyan Li*</a>,
-        <strong>Xiu Yuan*</strong>,
-        <a href="https://zhanghanbo.github.io/">Hanbo Zhang</a>,
-        <a href="https://scholar.google.com/citations?user=i8wNtSgAAAAJ&hl=en">Yuxiao Liu</a>,
-        <a href="https://mig-ai.github.io/person-zhangchongjie.html">Chongjie Zhang</a>,
-        <a href="https://apex.sjtu.edu.cn/members/yyu">Yong Yu</a>,
-        <a href="https://wnzhang.net/">Weinan Zhang</a>,
-        <a href="https://minghuanliu.com/">Minghuan Liu</a> (* denotes equal contribution)
-        <br>
-        <em>Submitted to CoRL 2026</em>
-        <br>
-		<em> Decision-Making from Offline Datasets to Online Adaptation Workshop at ICML 2026</em>
-		<br>
-        <a href="index.html">Project Page</a>
-        /
-        <a href="index.html">ArXiv</a>
-        /
-        <a href="index.html">Code</a>
+      </section>
 
-		<br>
+      <footer class="site-footer">
+        <p>&copy; <span id="year">2026</span> Xiu Yuan</p>
+        <p>
+          Template originally adapted from
+          <a href="https://jonbarron.info/">Jon Barron</a>'s academic website.
+        </p>
+      </footer>
+    </main>
 
-		<p>Imitation policies are brittle under distribution shift, and direct finetuning is costly. USR enables finetuning-free online improvement of diffusion policies through unified latent Steering and residual Refinement: a lightweight actor steers diffusion toward promising modes while adding corrections beyond the policy’s support. USR achieves state-of-the-art results on benchmarks, MultiModalBench, and real-robot VLA adaptation.</p>
-      </td>
-    </tr>
+    <script>
+      (function () {
+        // Theme toggle: cycles between light and dark, remembering the choice.
+        var root = document.documentElement;
+        var toggle = document.getElementById("theme-toggle");
 
-    <tr bgcolor="#ffffd0">
-      <td style="padding:16px;width:30%;vertical-align:middle">
-        <div style="display:flex; justify-content:center; align-items:center; height:100%;">
-          <img src="images/rnrdp.gif" width="200" style="display:block; max-width:100%; height:auto; border-radius:8px;">
-        </div>
-      </td>
-      <td style="padding:8px;width:80%;vertical-align:middle">
-        <a href="https://rnr-dp.github.io/">
-          <span class="papertitle">Responsive Noise-Relaying Diffusion Policy: Responsive and Efficient Visuomotor Control</span>
-        </a>
-        <br>
-        <a href="https://zhuoqun-chen.github.io/">Zhuoqun Chen*</a>,
-        <strong>Xiu Yuan*</strong>,
-        <a href="https://cseweb.ucsd.edu/~t3mu/">Tongzhou Mu</a>,
-        <a href="https://cseweb.ucsd.edu/~haosu/">Hao Su</a> (* denotes equal contribution)
-        <br>
-        <em>TMLR 2025</em>
-        <br>
-        <em>Generative Models for Robot Learning Workshop at ICLR 2025</em>
-        <br>
-        <a href="https://rnr-dp.github.io/">Project Page</a>
-        /
-        <a href="https://arxiv.org/pdf/2502.12724">ArXiv</a>
-        /
-        <a href="https://github.com/zhuoqun-chen/rnrdp">Code</a>
-        <br>
-        <p>We propose RNR-DP (Responsive Noise-Relaying Diffusion Policy), a novel diffusion-based approach for visuomotor control that ensures responsive and efficient action generation. By leveraging the noise-relaying action buffer design and sequential denoising mechanism, RNR-DP demonstrates advantages on both response-sensitive and regular tasks across evaluated benchmarks.</p>
-      </td>
-    </tr>
+        function resolved() {
+          var set = root.getAttribute("data-theme");
+          if (set) return set;
+          return window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+        }
 
-    <tr bgcolor="#ffffd0">
-      <td style="padding:16px;width:30%;vertical-align:middle">
-        <div style="display:flex; justify-content:center; align-items:center; height:100%;">
-          <img src="images/pi_dec.gif" width="200" style="display:block; max-width:100%; height:auto; border-radius:8px;">
-        </div>
-      </td>
-      <td style="padding:8px;width:80%;vertical-align:middle">
-        <a href="https://policydecorator.github.io/">
-          <span class="papertitle">Policy Decorator: Model-Agnostic Online Refinement for Large Policy Model</span>
-        </a>
-        <br>
-        <strong>Xiu Yuan*</strong>,
-        <a href="https://cseweb.ucsd.edu/~t3mu/">Tongzhou Mu*</a>,
-        <a href="https://www.stoneztao.com/">Stone Tao</a>,
-        <a href="https://seerkfang.github.io/">Yunhao Fang</a>,
-        <a href="index.html">Mengke Zhang</a>,
-        <a href="https://cseweb.ucsd.edu/~haosu/">Hao Su</a> (* denotes equal contribution)
-        <br>
-        <em>ICLR 2025</em>
-        <br>
-        <a href="https://policydecorator.github.io/">Project Page</a>
-        /
-        <a href="https://arxiv.org/abs/2412.13630">ArXiv</a>
-        /
-        <!-- <a href="https://github.com/tongzhoumu/policy_decorator">Code</a> -->
-        <a href="https://github.com/你的repo" target="_blank" rel="noopener">Code</a>
+        toggle.addEventListener("click", function () {
+          var next = resolved() === "dark" ? "light" : "dark";
+          root.setAttribute("data-theme", next);
+          try {
+            localStorage.setItem("theme", next);
+          } catch (e) {}
+        });
 
-        <iframe
-          src="https://ghbtns.com/github-btn.html?user=tongzhoumu&repo=policy_decorator&type=star&count=true"
-          frameborder="0"
-          scrolling="0"
-          width="120"
-          height="20"
-          style="vertical-align: middle; position: relative; top: -1px; margin-left: 6px;"
-          title="GitHub Stars">
-        </iframe>
+        // Hairline under the sticky bar, only once the page has scrolled.
+        var bar = document.getElementById("topbar");
+        var onScroll = function () {
+          bar.setAttribute("data-scrolled", window.scrollY > 8 ? "true" : "false");
+        };
+        window.addEventListener("scroll", onScroll, { passive: true });
+        onScroll();
 
-        <br>
-        <p>Large policy models learned by offline imitation learning are often limited by the quantity, quality, and diversity of demonstrations. We introduce Policy Decorator, which uses a model-agnostic residual policy to refine large policy models during online interactions. By implementing controlled exploration strategies, Policy Decorator enables stable, sample-efficient online learning.</p>
-      </td>
-    </tr>
-
-    <tr>
-      <td style="padding:16px;width:30%;vertical-align:middle">
-        <div style="display:flex; justify-content:center; align-items:center; height:100%;">
-          <img src="images/s2v_method.jpg" width="200" style="display:block; max-width:100%; height:auto; border-radius:8px;">
-        </div>
-      </td>
-      <td style="padding:8px;width:80%;vertical-align:middle">
-        <a href="https://arxiv.org/abs/2412.13662">
-          <span class="papertitle">When Should We Prefer State-to-Visual DAgger Over Visual Reinforcement Learning?</span>
-        </a>
-        <br>
-        <a href="https://cseweb.ucsd.edu/~t3mu/">Tongzhou Mu*</a>,
-        <a href="https://openreview.net/profile?id=~Zhaoyang_Li9">Zhaoyang Li*</a>,
-        <a href="https://openreview.net/profile?id=~Stanis%C5%82aw_Wiktor_Strzelecki1">Stanislaw Strzelecki*</a>,
-        <strong>Xiu Yuan</strong>,
-        <a href="https://openreview.net/profile?id=~Yunchao_Yao1">Yunchao Yao</a>,
-        <a href="https://www.litianliang.org/">Litian Liang</a>,
-        <a href="https://cseweb.ucsd.edu/~haosu/">Hao Su</a>
-        <br>
-        <em>AAAI 2025</em>
-        <br>
-        <a href="https://arxiv.org/abs/2412.13662">Project Page</a>
-        /
-        <a href="https://arxiv.org/abs/2412.13662">ArXiv</a>
-        /
-        <a href="https://github.com/tongzhoumu/s2v-dagger">Code</a>
-        <br>
-        <p>Visual reinforcement learning is a promising approach that directly trains policies from visual observations, although it faces challenges in sample efficiency and computational costs. This study conducts an empirical comparison of State-to-Visual DAgger, a two-stage framework that initially trains a state policy before adopting online imitation to learn a visual policy, and Visual RL across a diverse set of tasks.</p>
-      </td>
-    </tr>
-
-    <tr>
-      <td style="padding:16px;width:30%;vertical-align:middle">
-        <div style="display:flex; justify-content:center; align-items:center; height:100%;">
-          <video src="images/solar.mov" style="height:120px; width:auto; max-width:100%; object-fit:contain; display:inline-block;" autoplay loop muted playsinline></video>
-
-        </div>
-      </td>
-      <td style="padding:8px;width:80%;vertical-align:middle">
-        <a href="https://pubs.acs.org/doi/abs/10.1021/acsami.2c09063">
-          <span class="papertitle">Enhanced Contactless Salt-Collecting Solar Desalination</span>
-        </a>
-        <br>
-        <a href="index.html">Yue Bian</a>,
-        <a href="index.html">Zhihao Ye</a>,
-        <a href="index.html">Gengyou Zhao</a>,
-        <a href="index.html">Kun Tang</a>,
-        <a href="index.html">Yan Tang</a>,
-        <a href="index.html">Si Chen</a>,
-        <a href="index.html">Lijuan Zhao</a>,
-        <strong>Xiu Yuan</strong>,
-        <a href="index.html">Shunming Zhu</a>,
-        <a href="index.html">Jiandong Ye</a>,
-        <a href="index.html">Hai Lu</a>,
-        <a href="index.html">Yi Yang</a>,
-        <a href="index.html">Lan Fu</a>,
-        <a href="index.html">Shulin Gu</a>
-        <br>
-        <em>ACS Applied Materials & Interfaces 2022</em>
-        <br>
-        <a href="https://pubs.acs.org/doi/abs/10.1021/acsami.2c09063">Project Page</a>
-        /
-        <a href="https://pubs.acs.org/doi/abs/10.1021/acsami.2c09063">Paper</a>
-        <br>
-        <p>A paper-based thermal radiation-enabled evaporation system (TREES) is demonstrated to achieve sustainable and highly efficient salt-collecting desalination, featuring a dynamic evaporation front based on the accumulated salt layer where water serves as its own absorber via energy down-conversion. When processing 7 wt % brine, it continuously evaporates water at a high rate─2.25 L m–2 h–1 under 1 sun illumination─which is well beyond the input solar energy limit for over 366 h.</p>
-      </td>
-    </tr>
-
-    <tr>
-      <td style="padding:16px;width:30%;vertical-align:middle">
-        <div style="display:flex; justify-content:center; align-items:center; height:100%;">
-          <img src="images/carbonized.jpeg" width="200" style="display:block; max-width:100%; height:auto; border-radius:8px;">
-        </div>
-      </td>
-      <td style="padding:8px;width:80%;vertical-align:middle">
-        <a href="https://onlinelibrary.wiley.com/doi/full/10.1002/gch2.201900040">
-          <span class="papertitle">Carbonized Tree-Like Furry Magnolia Fruit-Based Evaporator Replicating the Feat of Plant Transpiration</span>
-        </a>
-        <br>
-        <a href="index.html">Yue Bian</a>,
-        <a href="index.html">Yang Shen</a>,
-        <a href="index.html">Kun Tang</a>,
-        <a href="index.html">Qianqian Du</a>,
-        <a href="index.html">Licai Hao</a>,
-        <a href="index.html">Dongyang Liu</a>,
-        <a href="index.html">Jinggang Hao</a>,
-        <a href="index.html">Dong Zhou</a>,
-        <a href="index.html">Xiaokun Wang</a>,
-        <a href="index.html">Huiling Zhang</a>,
-        <a href="index.html">Peiye Li</a>,
-        <a href="index.html">Yimeng Sang</a>,
-        <strong>Xiu Yuan</strong>,
-        <a href="index.html">Lijuan Zhao</a>,
-        <a href="index.html">Jiandong Ye</a>,
-        <a href="index.html">Bin Liu</a>,
-        <a href="index.html">Hai Lu</a>,
-        <a href="index.html">Yi Yang</a>,
-        <a href="index.html">Rong Zhang</a>,
-        <a href="index.html">Youdou Zheng</a>,
-        <a href="index.html">Xiang Xiong</a>,
-        <a href="index.html">Shulin Gu</a>
-        <br>
-        <em>Global Challenges 2019</em>
-        <br>
-        <a href="https://onlinelibrary.wiley.com/doi/full/10.1002/gch2.201900040">Project Page</a>
-        /
-        <a href="https://onlinelibrary.wiley.com/doi/full/10.1002/gch2.201900040">Paper</a>
-        <br>
-        <p>This work reveals that magnolia fruits, as a kind of tree-like living organism, can be outstanding 3D tree-like evaporators through a simple carbonization process. The mini tree possesses omnidirectional high light absorptance with minimized heat loss and gains energy from the environment. Water confined in the fruit possesses reduced vaporization enthalpy and transports quickly following the Murray's law. A record-high vapor generation rate of 1.22 kg m−2 h−1 in dark and 3.15 kg m−2 h−1 under 1 sun illumination is achieved under the assistance of the gully-like furry surface.</p>
-      </td>
-    </tr>
-
-        </td>
-      </tr>
-    </table>
+        document.getElementById("year").textContent = new Date().getFullYear();
+      })();
+    </script>
   </body>
 </html>
