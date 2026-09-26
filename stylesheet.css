@@ -697,6 +697,10 @@ em {
   transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+.pub__media--contain img {
+  object-fit: contain;
+}
+
 .pub:hover .pub__media img,
 .pub:hover .pub__media video {
   transform: scale(1.035);
